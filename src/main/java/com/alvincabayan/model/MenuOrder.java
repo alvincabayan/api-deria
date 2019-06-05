@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import org.springframework.validation.annotation.Validated;
 
 /**
- * Order
+ * Menu Order
  */
 @Validated
 @Entity

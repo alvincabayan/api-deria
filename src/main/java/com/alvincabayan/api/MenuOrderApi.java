@@ -23,19 +23,19 @@ public interface MenuOrderApi {
 			"application/json" }, method = RequestMethod.POST)
 	ResponseEntity<Void> addMenuOrder(@Valid @RequestBody MenuOrder body);
 
-	@RequestMapping(value = "/menuorder/{idmenuorder}", produces = { "application/json" }, method = RequestMethod.DELETE)
-	ResponseEntity<Void> deleteMenuOrder(Long orderId, @RequestHeader(value = "api_key", required = false) String apiKey);
+	@RequestMapping(value = "/menuorder/{idMenuOrder}", produces = { "application/json" }, method = RequestMethod.DELETE)
+	ResponseEntity<Void> deleteMenuOrder(Long idmenuorder, @RequestHeader(value = "api_key", required = false) String apiKey);
 
-	@RequestMapping(value = "/menuorder/{idmenuorder}", produces = { "application/json" }, method = RequestMethod.GET)
-	ResponseEntity<MenuOrder> getMenuOrderById(@PathVariable("orderId") Long orderId);
+	@RequestMapping(value = "/menuorder/{idMenuOrder}", produces = { "application/json" }, method = RequestMethod.GET)
+	ResponseEntity<MenuOrder> getMenuOrderById(@PathVariable("idMenuOrder") Long idMenuOrder);
 
 	@RequestMapping(value = "/menuorder", produces = { "application/json" }, consumes = {
 			"application/json" }, method = RequestMethod.PUT)
 	ResponseEntity<Void> updateMenuOrder(@Valid @RequestBody MenuOrder body);
 
-	@RequestMapping(value = "/menuorder/{idmenuorder}", produces = { "application/json" }, consumes = {
+	@RequestMapping(value = "/menuorder/{idMenuOrder}", produces = { "application/json" }, consumes = {
 			"application/x-www-form-urlencoded" }, method = RequestMethod.POST)
-	ResponseEntity<Void> updateMenuOrderWithForm(@PathVariable("orderId") Long orderId,
+	ResponseEntity<Void> updateMenuOrderWithForm(@PathVariable("idMenuOrder") Long idMenuOrder,
 			@RequestParam(value = "name", required = false) String name,
 			@RequestParam(value = "status", required = false) String status);
 
