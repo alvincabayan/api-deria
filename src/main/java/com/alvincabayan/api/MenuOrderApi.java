@@ -17,25 +17,25 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.alvincabayan.model.MenuOrder;
 
-public interface OrderApi {
+public interface MenuOrderApi {
 
-	@RequestMapping(value = "/order", produces = { "application/json" }, consumes = {
+	@RequestMapping(value = "/menuorder", produces = { "application/json" }, consumes = {
 			"application/json" }, method = RequestMethod.POST)
-	ResponseEntity<Void> addOrder(@Valid @RequestBody MenuOrder body);
+	ResponseEntity<Void> addMenuOrder(@Valid @RequestBody MenuOrder body);
 
-	@RequestMapping(value = "/order/{orderId}", produces = { "application/json" }, method = RequestMethod.DELETE)
-	ResponseEntity<Void> deleteOrder(Long orderId, @RequestHeader(value = "api_key", required = false) String apiKey);
+	@RequestMapping(value = "/menuorder/{idmenuorder}", produces = { "application/json" }, method = RequestMethod.DELETE)
+	ResponseEntity<Void> deleteMenuOrder(Long orderId, @RequestHeader(value = "api_key", required = false) String apiKey);
 
-	@RequestMapping(value = "/order/{orderId}", produces = { "application/json" }, method = RequestMethod.GET)
-	ResponseEntity<MenuOrder> getOrderById(@PathVariable("orderId") Long orderId);
+	@RequestMapping(value = "/menuorder/{idmenuorder}", produces = { "application/json" }, method = RequestMethod.GET)
+	ResponseEntity<MenuOrder> getMenuOrderById(@PathVariable("orderId") Long orderId);
 
-	@RequestMapping(value = "/order", produces = { "application/json" }, consumes = {
+	@RequestMapping(value = "/menuorder", produces = { "application/json" }, consumes = {
 			"application/json" }, method = RequestMethod.PUT)
-	ResponseEntity<Void> updateOrder(@Valid @RequestBody MenuOrder body);
+	ResponseEntity<Void> updateMenuOrder(@Valid @RequestBody MenuOrder body);
 
-	@RequestMapping(value = "/order/{orderId}", produces = { "application/json" }, consumes = {
+	@RequestMapping(value = "/menuorder/{idmenuorder}", produces = { "application/json" }, consumes = {
 			"application/x-www-form-urlencoded" }, method = RequestMethod.POST)
-	ResponseEntity<Void> updateOrderWithForm(@PathVariable("orderId") Long orderId,
+	ResponseEntity<Void> updateMenuOrderWithForm(@PathVariable("orderId") Long orderId,
 			@RequestParam(value = "name", required = false) String name,
 			@RequestParam(value = "status", required = false) String status);
 

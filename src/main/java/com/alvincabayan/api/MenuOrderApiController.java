@@ -15,19 +15,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alvincabayan.model.MenuOrder;
-import com.alvincabayan.service.OrderService;
+import com.alvincabayan.service.MenuOrderService;
 
 @RestController
-public class OrderApiController implements OrderApi {
+public class MenuOrderApiController implements MenuOrderApi {
 
-	private static final Logger log = LoggerFactory.getLogger(OrderApiController.class);
+	private static final Logger log = LoggerFactory.getLogger(MenuOrderApiController.class);
 
 	// private final ObjectMapper objectMapper;
 
 	// private final HttpServletRequest request;
 
 	@Autowired
-	private OrderService orderService;
+	private MenuOrderService menuOrderService;
 
 	/*
 	 * @Autowired public OrderApiController(ObjectMapper objectMapper,
@@ -35,27 +35,27 @@ public class OrderApiController implements OrderApi {
 	 * objectMapper; this.request = request; this.orderService = orderService; }
 	 */
 
-	public ResponseEntity<Void> addOrder(@Valid @RequestBody MenuOrder order) {
-		orderService.addOrder(order);
+	public ResponseEntity<Void> addMenuOrder(@Valid @RequestBody MenuOrder menuOrder) {
+		menuOrderService.addOrder(menuOrder);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 
-	public ResponseEntity<Void> deleteOrder(Long orderId,
+	public ResponseEntity<Void> deleteMenuOrder(Long idMenuOrder,
 			@RequestHeader(value = "api_key", required = false) String apiKey) {
 		return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
-	public ResponseEntity<MenuOrder> getOrderById(@PathVariable("orderId") Long orderId) {
-		MenuOrder order = orderService.getOrderById(orderId);
+	public ResponseEntity<MenuOrder> getMenuOrderById(@PathVariable("idMenuOrder") Long idMenuOrder) {
+		MenuOrder menuOrder = menuOrderService.getOrderById(idMenuOrder);
 
-		return new ResponseEntity<MenuOrder>(order, HttpStatus.OK);
+		return new ResponseEntity<MenuOrder>(menuOrder, HttpStatus.OK);
 	}
 
-	public ResponseEntity<Void> updateOrder(@Valid @RequestBody MenuOrder body) {
+	public ResponseEntity<Void> updateMenuOrder(@Valid @RequestBody MenuOrder body) {
 		return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
-	public ResponseEntity<Void> updateOrderWithForm(@PathVariable("orderId") Long orderId,
+	public ResponseEntity<Void> updateMenuOrderWithForm(@PathVariable("idMenuOrder") Long idMenuOrder,
 			@RequestParam(value = "name", required = false) String name,
 			@RequestParam(value = "status", required = false) String status) {
 		return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
