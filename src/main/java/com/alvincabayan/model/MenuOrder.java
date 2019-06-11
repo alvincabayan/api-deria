@@ -20,7 +20,7 @@ public class MenuOrder {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long idMenuOrder = null;
 
-	private String name = null;
+	private String menuOrderName = null;
 
 	private String customerName = null;
 
@@ -41,12 +41,12 @@ public class MenuOrder {
 		this.idMenuOrder = idMenuOrder;
 	}
 
-	public String getName() {
-		return name;
+	public String getMenuOrderName() {
+		return menuOrderName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setMenuOrderName(String menuOrderName) {
+		this.menuOrderName = menuOrderName;
 	}
 
 	public String getCustomerName() {
@@ -83,7 +83,7 @@ public class MenuOrder {
 			return false;
 		}
 		MenuOrder menuOrder = (MenuOrder) o;
-		return Objects.equals(this.idMenuOrder, menuOrder.idMenuOrder) && Objects.equals(this.name, menuOrder.name)
+		return Objects.equals(this.idMenuOrder, menuOrder.idMenuOrder) && Objects.equals(this.menuOrderName, menuOrder.menuOrderName)
 				&& Objects.equals(this.customerName, menuOrder.customerName)
 				&& Objects.equals(this.customerCompany, menuOrder.customerCompany)
 				&& Objects.equals(this.menuOrderSize, menuOrder.menuOrderSize);
@@ -91,7 +91,7 @@ public class MenuOrder {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(idMenuOrder, name, customerName, customerCompany, menuOrderSize);
+		return Objects.hash(idMenuOrder, menuOrderName, customerName, customerCompany, menuOrderSize);
 	}
 
 	@Override
@@ -100,7 +100,7 @@ public class MenuOrder {
 		sb.append("class Order {\n");
 
 		sb.append("    idOrders: ").append(toIndentedString(idMenuOrder)).append("\n");
-		sb.append("    name: ").append(toIndentedString(name)).append("\n");
+		sb.append("    name: ").append(toIndentedString(menuOrderName)).append("\n");
 		sb.append("    customerName: ").append(toIndentedString(customerName)).append("\n");
 		sb.append("    customerCompany: ").append(toIndentedString(customerCompany)).append("\n");
 		sb.append("    menuOrderSize: ").append(toIndentedString(menuOrderSize)).append("\n");

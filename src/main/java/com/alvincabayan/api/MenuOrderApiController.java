@@ -22,10 +22,6 @@ public class MenuOrderApiController implements MenuOrderApi {
 
 	private static final Logger log = LoggerFactory.getLogger(MenuOrderApiController.class);
 
-	// private final ObjectMapper objectMapper;
-
-	// private final HttpServletRequest request;
-
 	@Autowired
 	private MenuOrderService menuOrderService;
 

@@ -18,7 +18,7 @@ public class MenuOrderService {
 	public MenuOrder getOrderById(Long idMenuOrders) {
 		MenuOrder menuOrder = new MenuOrder();
 		menuOrder.setIdMenuOrder(1L);
-		menuOrder.setName("Laing");
+		menuOrder.setMenuOrderName("Laing");
 		
     	return menuOrder;
 	}
