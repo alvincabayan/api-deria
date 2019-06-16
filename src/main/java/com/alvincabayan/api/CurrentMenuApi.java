@@ -9,7 +9,7 @@ import com.alvincabayan.model.CurrentMenu;
 
 
 public interface CurrentMenuApi {
-	@CrossOrigin(origins = "http://localhost:3000")
+	@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:8080"})
 	@RequestMapping(value = "/currentMenu", produces = { "application/json" }, method = RequestMethod.GET)
 	ResponseEntity<CurrentMenu> getCurrentMenu();
 }

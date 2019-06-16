@@ -1,5 +1,7 @@
 package com.alvincabayan.service;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,7 @@ public class MenuOrderService {
 	private MenuOrderRepository menuOrderRepository;
 	
 	public void addOrder(MenuOrder menuOrder) {
+		menuOrder.setMenuOrderDate(new Date());
 		menuOrderRepository.save(menuOrder);
 	}
 	

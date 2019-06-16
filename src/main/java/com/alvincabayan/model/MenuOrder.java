@@ -1,5 +1,6 @@
 package com.alvincabayan.model;
 
+import java.util.Date;
 import java.util.Objects;
 
 import javax.persistence.Entity;
@@ -27,6 +28,8 @@ public class MenuOrder {
 	private String customerCompany = null;
 
 	private String menuOrderSize = null;
+	
+	private Date menuOrderDate = null;
 
 	public MenuOrder idMenuOrder(Long idMenuOrder) {
 		this.idMenuOrder = idMenuOrder;
@@ -72,7 +75,14 @@ public class MenuOrder {
 	public void setMenuOrderSize(String menuOrderSize) {
 		this.menuOrderSize = menuOrderSize;
 	}
+	
+	public Date getMenuOrderDate() {
+		return menuOrderDate;
+	}
 
+	public void setMenuOrderDate(Date menuOrderDate) {
+		this.menuOrderDate = menuOrderDate;
+	}
 
 	@Override
 	public boolean equals(java.lang.Object o) {
@@ -86,12 +96,13 @@ public class MenuOrder {
 		return Objects.equals(this.idMenuOrder, menuOrder.idMenuOrder) && Objects.equals(this.menuOrderName, menuOrder.menuOrderName)
 				&& Objects.equals(this.customerName, menuOrder.customerName)
 				&& Objects.equals(this.customerCompany, menuOrder.customerCompany)
-				&& Objects.equals(this.menuOrderSize, menuOrder.menuOrderSize);
+				&& Objects.equals(this.menuOrderSize, menuOrder.menuOrderSize)
+				&& Objects.equals(this.menuOrderDate, menuOrder.menuOrderDate);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(idMenuOrder, menuOrderName, customerName, customerCompany, menuOrderSize);
+		return Objects.hash(idMenuOrder, menuOrderName, customerName, customerCompany, menuOrderSize, menuOrderDate);
 	}
 
 	@Override
@@ -104,6 +115,7 @@ public class MenuOrder {
 		sb.append("    customerName: ").append(toIndentedString(customerName)).append("\n");
 		sb.append("    customerCompany: ").append(toIndentedString(customerCompany)).append("\n");
 		sb.append("    menuOrderSize: ").append(toIndentedString(menuOrderSize)).append("\n");
+		sb.append("    menuOrderDate: ").append(toIndentedString(menuOrderDate)).append("\n");
 		sb.append("}");
 		return sb.toString();
 	}
