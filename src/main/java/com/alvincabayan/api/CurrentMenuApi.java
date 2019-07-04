@@ -9,6 +9,6 @@ import com.alvincabayan.model.CurrentMenu;
 
 
 public interface CurrentMenuApi {
-	@RequestMapping(value = "/currentMenu", produces = { "application/json" }, method = RequestMethod.GET)
+	@RequestMapping(value = "/api/currentMenu", produces = { "application/json" }, method = RequestMethod.GET)
 	ResponseEntity<CurrentMenu> getCurrentMenu();
 }
