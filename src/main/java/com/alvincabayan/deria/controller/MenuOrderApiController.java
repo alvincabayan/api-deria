@@ -1,4 +1,4 @@
-package com.alvincabayan.api;
+package com.alvincabayan.deria.controller;
 
 import javax.validation.Valid;
 
@@ -7,15 +7,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.alvincabayan.model.MenuOrder;
-import com.alvincabayan.service.MenuOrderService;
+import com.alvincabayan.deria.model.MenuOrder;
+import com.alvincabayan.deria.service.MenuOrderService;
 
 @RestController
 public class MenuOrderApiController implements MenuOrderApi {

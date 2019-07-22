@@ -1,4 +1,4 @@
-package com.alvincabayan.model;
+package com.alvincabayan.deria.model;
 
 import java.util.Date;
 import java.util.Objects;

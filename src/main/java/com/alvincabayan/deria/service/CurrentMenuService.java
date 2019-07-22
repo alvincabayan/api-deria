@@ -1,4 +1,4 @@
-package com.alvincabayan.service;
+package com.alvincabayan.deria.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,17 +6,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.alvincabayan.model.CurrentMenu;
-import com.alvincabayan.repository.CurrentMenuRepository;
+import com.alvincabayan.deria.dao.CurrentMenuDao;
+import com.alvincabayan.deria.model.CurrentMenu;
+
 
 @Service
-public class CurrentMenuService {
+public class CurrentMenuService {	
 	@Autowired
-	private CurrentMenuRepository currentMenuRepository;
+	private CurrentMenuDao currentMenuDao;
 	
 	public CurrentMenu getCurrentMenu() {
 		List<CurrentMenu> currentMenuList = new ArrayList<CurrentMenu>();//Collections.   currentMenuRepository.findAll();
-		Iterable<CurrentMenu> currentMenuIterable = currentMenuRepository.findAll();
+		Iterable<CurrentMenu> currentMenuIterable = currentMenuDao.findAll();
 		currentMenuIterable.forEach(currentMenuList::add);
 		
     	return currentMenuList.get(0);

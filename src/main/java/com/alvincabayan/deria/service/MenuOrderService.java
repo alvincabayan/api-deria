@@ -1,21 +1,21 @@
-package com.alvincabayan.service;
+package com.alvincabayan.deria.service;
 
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.alvincabayan.model.MenuOrder;
-import com.alvincabayan.repository.MenuOrderRepository;
+import com.alvincabayan.deria.model.MenuOrder;
+import com.alvincabayan.deria.dao.MenuOrderDao;
 
 @Service
 public class MenuOrderService {
 	@Autowired
-	private MenuOrderRepository menuOrderRepository;
+	private MenuOrderDao menuOrderDao;
 	
 	public void addOrder(MenuOrder menuOrder) {
 		menuOrder.setMenuOrderDate(new Date());
-		menuOrderRepository.save(menuOrder);
+		menuOrderDao.save(menuOrder);
 	}
 	
 	public MenuOrder getOrderById(Long idMenuOrders) {
